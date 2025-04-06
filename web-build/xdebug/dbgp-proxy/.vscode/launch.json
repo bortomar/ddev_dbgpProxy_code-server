@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "DDEV: Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "dbgpProxy": {
+                "host": "127.0.0.1",
+                "enable": true,
+                "ideKey": "VSCODE",
+                // "port": 9001
+            },
+            "port": 9033, // random port
+            "pathMappings": {
+                "/var/www/html": "${workspaceFolder}"
+            }, 
+            "preLaunchTask": "DDEV: Enable Xdebug",
+            "postDebugTask": "DDEV: Disable Xdebug"
+        }
+    ]
+}

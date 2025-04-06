@@ -1,0 +1,13 @@
+## #ddev-generated
+## You can copy this Dockerfile.example to Dockerfile to add configuration
+## or packages or anything else to your webimage
+## These additions will be appended last to DDEV's own Dockerfile
+# RUN echo "Built on $(date)" > /build-date.txt 
+
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+COPY code-server/code-server-start.sh /usr/bin/code-server-start
+COPY code-server/code-server-stop.sh /usr/bin/code-server-stop
+RUN chmod a+x /usr/bin/code-server-start
+RUN chmod a+x /usr/bin/code-server-stop 
+ADD code-server/code-server.tar.gz /home/${username}/.local/share
+RUN chown -R ${username}:${username} /home/${username}/.local

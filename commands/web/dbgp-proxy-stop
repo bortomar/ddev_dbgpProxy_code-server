@@ -1,0 +1,4 @@
+#!/bin/bash
+xdebug off
+dbgp-proxy-stop
+ 

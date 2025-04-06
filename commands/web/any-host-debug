@@ -1,0 +1,7 @@
+#!/bin/bash
+xdebug off
+dbgp-proxy-stop
+cp /mnt/ddev_config/web-build/xdebug/any-host-debug/php-xdebug.ini /etc/php/${DDEV_PHP_VERSION}/fpm/conf.d/ 
+cp /mnt/ddev_config/web-build/xdebug/any-host-debug/php-xdebug.ini /etc/php/${DDEV_PHP_VERSION}/cli/conf.d/
+cp -r /mnt/ddev_config/web-build/xdebug/any-host-debug/.vscode /var/www/html/
+ 

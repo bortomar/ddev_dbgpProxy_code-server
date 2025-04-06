@@ -1,0 +1,12 @@
+## #ddev-generated
+## You can copy this Dockerfile.example to Dockerfile to add configuration
+## or packages or anything else to your webimage
+## These additions will be appended last to DDEV's own Dockerfile
+# RUN echo "Built on $(date)" > /build-date.txt
+
+RUN curl -o /usr/local/bin/dbgpProxy https://xdebug.org/files/binaries/dbgpProxy
+RUN chmod a+x /usr/local/bin/dbgpProxy
+COPY xdebug/dbgp-proxy/dbgp-proxy-start.sh /usr/bin/dbgp-proxy-start
+COPY xdebug/dbgp-proxy/dbgp-proxy-stop.sh /usr/bin/dbgp-proxy-stop
+RUN chmod a+x /usr/bin/dbgp-proxy-start
+RUN chmod a+x /usr/bin/dbgp-proxy-stop
