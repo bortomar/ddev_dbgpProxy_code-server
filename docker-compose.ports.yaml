@@ -2,3 +2,8 @@ services:
   web:
     ports:
       - "8090:8080"
+
+      # debug ddev console command with web code-server
+      #     conflict with host vscode debug
+      #     it is better to run bin/console from web without port mapping 
+      # - "9003:9003" 
